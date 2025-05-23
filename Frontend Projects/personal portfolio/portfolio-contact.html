@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Contact- Basic Website</title>
+    <meta name="description" content="Basic website of Kennedi Jones, a Frontend Developer." />
+    <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Resume, Web Development" />
+    <meta name="author" content="Kennedi Jones" />
+    <meta property="og:title" content="Kennedi Jones-Frontend Developer" />
+    <meta property="og:description" content="Basic website of Kennedi Jones, a Frontend Developer." />
+    <meta property="og:type" content="website" />
+    <style>
+      body {
+        background-color: tan;
+      }
+
+      .header {
+        border: 2px solid black;
+        padding: 5px;
+        margin: 5px auto;
+        width: 1000px;
+        height: 200px;
+        background-color: floralwhite;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 30px;
+      }
+
+      h1 {
+        font-family: Exile;
+        letter-spacing: 5px;
+        text-align: center;
+        padding-top: 50px;
+      }
+
+      .nav-links a {
+        color: black;
+        text-decoration: none;
+        margin-left: 8px;
+        text-decoration: none;
+      }
+
+      .center-container {
+        border: 2px solid black;
+        margin: 20px auto;
+        width: 970px;
+        padding: 20px;
+        font-family: Roboto Mono, serif;
+        background-color: papayawhip;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: lemonchiffon;
+      }
+
+      textarea {
+        resize: vertical;
+        background-color: lemonchiffon;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: darkkhaki;
+      }
+
+      .footer {
+        border: 2px solid black;
+        width: 990px;
+        margin: 20px auto;
+        padding: 10px;
+        text-align: center;
+        font-family: Roboto Mono, serif;
+        background-color: floralwhite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-top">
+        <p class="name">your name</p>
+        <div class="nav-links">
+          <a href="portfolio.html">Home /</a>
+          <a href="portfolio-projects.html">Projects /</a>
+          <a href="portfolio-articles.html">Articles /</a>
+          <a href="portfolio-contact.html">Contact</a>
+        </div>
+      </div>
+      <h1>Contact Me</h1>
+    </div>
+    <div class="center-container">
+      <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div class="footer">
+      <h3>© all rights reserved 2025 </h3>
+    </div>
+  </body>
+</html>
