@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Changelog</title>
+  </head>
+  <style>
+    body {
+      background-color: cornsilk;
+      font-family: Roboto Monospace, serif;
+      color: navy;
+    }
+
+    .outline {
+      border: 2px solid black;
+      padding: 5px;
+      margin: 100px auto;
+      width: 500px;
+      height: 500px;
+      border-radius: 50px;
+      background-color: lightcyan;
+      border-color: navy;
+    }
+
+    .timeline {
+      height: 300px;
+      width: 40px;
+      margin: 40px 250px;
+      border-left: 3px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: skyblue;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      left: 597px;
+      transition: transform 0.2s ease;
+    }
+
+    .circle:hover {
+      transform: scale(1.2);
+    }
+    
+    .left-text:hover {
+      transform: scale(1.2);
+    }
+
+    .right-text:hover {
+      transform: scale(1.2);
+    }
+
+    .left-text {
+      position: absolute;
+      margin: 100px margin-left;
+      margin-left: 115px;
+      transition: transform 0.2s ease;
+    }
+
+    .right-text {
+      position: absolute;
+      margin: 100px margin-left;
+      margin-left: 270px;
+      transition: transform 0.2s ease;
+    }
+
+    .button {
+      position: absolute;
+      top: 560px;
+      left: 515px;
+      border: 2px solid black;
+      width: 200px;
+      height: 40px;
+      border-radius: 50px;
+      background-color: skyblue;
+    }
+
+    h1 {
+      text-align: center;
+      letter-spacing: 5px;
+      font-family: monospace;
+    }
+
+    h5 {
+      font-size: 11px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  </style>
+  <body>
+    <div class="outline">
+      <h1>Changelog</h1>
+      <p style="text-align: center; font-size: 15px;"> Here's everything we have shipped in the past few days:</p>
+      <div class="timeline">
+        <div class="circle" style="top: 250px;"></div>
+        <div class="circle" style="top: 290px;"></div>
+        <div class="circle" style="top: 330px;"></div>
+        <div class="circle" style="top: 370px;"></div>
+        <div class="circle" style="top: 410px;"></div>
+        <div class="circle" style="top: 450px;"></div>
+        <div class="circle" style="top: 490px;"></div>
+      </div>
+      <div class="left-text" style="top:235px;">
+        <p> September 3, 2024 </p>
+      </div>
+      <div class="left-text" style="top:275px;">
+        <p> August 28, 2024 </p>
+      </div>
+      <div class="left-text" style="top:315px;">
+        <p> August 25, 2024 </p>
+      </div>
+      <div class="left-text" style="top:355px;">
+        <p> August 22, 2024 </p>
+      </div>
+      <div class="left-text" style="top:395px;">
+        <p> August 15, 2024 </p>
+      </div>
+      <div class="left-text" style="top:435px;">
+        <p> August 10, 2024 </p>
+      </div>
+      <div class="left-text" style="top:475px;">
+        <p> August 1, 2024 </p>
+      </div>
+      <div class="right-text" style="top:230px;">
+        <h5>Announcing Projects on Frontend Roadmap</h5>
+      </div>
+      <div class="right-text" style="top:270px;">
+        <h5>Build your learning habits with learning streaks</h5>
+      </div>
+      <div class="right-text" style="top:310px;">
+        <h5>Git and Github Roadmap</h5>
+      </div>
+      <div class="right-text" style="top:350px;">
+        <h5>Submit your project solution and get feedback</h5>
+      </div>
+      <div class="right-text" style="top:390px;">
+        <h5>Backend Project Ideas</h5>
+      </div>
+      <div class="right-text" style="top:430px;">
+        <h5>Redis roadmap </h5>
+      </div>
+      <div class="right-text" style="top:470px;">
+        <h5>Changelog page to help you stay in loop</h5>
+      </div>
+      <button class="button"> Visit Complete Changelog </button>
+    </div>
+    </div>
+  </body>
+</html>
