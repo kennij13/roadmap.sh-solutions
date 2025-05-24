@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar Grid</title>
+  <style>
+    body {
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+      background-color: lavenderblush;
+    }
+
+    .date-header {
+      border: 2px solid black;
+      padding: 10px 20px;
+      margin: 50px auto 0 auto;
+      width: 500px;
+      height: 50px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      background-color: thistle;
+      color:indigo;
+    }
+
+    .date-header p {
+      margin: 0;
+    }
+
+    .calendar-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .calendar-button img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .month-title {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color:indigo;
+    }
+
+    .arrow {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      width: 500px;
+      margin: 10px auto 0 auto;
+      text-align: center;
+      font-weight: bold;
+      color:indigo;
+    }
+
+    .main-body {
+      border: 2px solid black;
+      width: 500px;
+      height: 400px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      gap: 1px;
+      box-sizing: border-box;
+      background-color: #ccc;
+      margin: 10px auto;
+      background-color: thistle;
+    }
+
+    .cell {
+      background-color: lavenderblush;
+      border: 1px solid #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color:indigo;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="date-header">
+    <p>dd/mm/yyyy</p>
+    <button class="calendar-button" aria-label="Calendar">
+      <img src="images/calendar.jpg" alt="Calendar icon" />
+    </button>
+  </div>
+
+  <div class="month-title">
+    <div class="arrow">&#9664;</div> 
+    <div>May 2025</div>
+    <div class="arrow">&#9654;</div> 
+  </div>
+
+  <div class="weekdays">
+    <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+  </div>
+
+  <div class="main-body">
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell">1</div><div class="cell">2</div><div class="cell">3</div>
+    <div class="cell">4</div><div class="cell">5</div><div class="cell">6</div><div class="cell">7</div>
+    <div class="cell">8</div><div class="cell">9</div><div class="cell">10</div>
+    <div class="cell">11</div><div class="cell">12</div><div class="cell">13</div><div class="cell">14</div>
+    <div class="cell">15</div><div class="cell">16</div><div class="cell">17</div>
+    <div class="cell">18</div><div class="cell">19</div><div class="cell">20</div><div class="cell">21</div>
+    <div class="cell">22</div><div class="cell">23</div><div class="cell">24</div>
+    <div class="cell">25</div><div class="cell">26</div><div class="cell">27</div><div class="cell">28</div>
+    <div class="cell">29</div><div class="cell">30</div><div class="cell">31</div>
+  </div>
+
+</body>
+</html>
