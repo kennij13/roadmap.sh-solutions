@@ -180,7 +180,7 @@
   function validateForm() {
     let completed = 0;
 
-    // Full Name Check
+  
     if (fullname.value.trim() !== '') {
       checks.name.classList.add('met');
       completed++;
@@ -188,7 +188,7 @@
       checks.name.classList.remove('met');
     }
 
-    // Email Check
+
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailPattern.test(email.value)) {
       checks.email.classList.add('met');
@@ -197,15 +197,15 @@
       checks.email.classList.remove('met');
     }
 
-    // Password Length
-    if (password.value.length >= 8) {
+
+    if(password.value.length >= 8) {
       checks.passwordLength.classList.add('met');
       completed++;
     } else {
       checks.passwordLength.classList.remove('met');
     }
 
-    // Password Match
+
     if (password.value === confirmPassword.value && password.value.length > 0) {
       checks.passwordMatch.classList.add('met');
       completed++;
@@ -213,7 +213,7 @@
       checks.passwordMatch.classList.remove('met');
     }
 
-    // Update Progress
+    
     const percent = (completed / 4) * 100;
     progressText.textContent = `${percent}%`;
     progressCircle.style.background = `conic-gradient(#28a745 0% ${percent}%, #e6e6e6 ${percent}% 100%)`;
