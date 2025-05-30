@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessible Form</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: honeydew;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-wrapper {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 700px;
+      display: flex;
+      gap: 40px;
+    }
+
+    .form-section {
+      flex: 1;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .password-toggle {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .password-toggle button {
+      background: none;
+      border: none;
+      color: #007BFF;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .update-button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color:seagreen;
+    }
+
+    .progress-section {
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .circular-progress {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: conic-gradient(#e6e6e6 0%, #e6e6e6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circular-progress span {
+      position: absolute;
+      font-weight: bold;
+    }
+
+    .checklist {
+      font-size: 14px;
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .checklist li {
+      margin: 6px 0;
+    }
+
+    .checklist li::before {
+      content: "✗";
+      color: red;
+      margin-right: 8px;
+    }
+
+    .checklist .met::before {
+      content: "✓";
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+  <div class="form-section">
+    <h2>Update Profile</h2>
+
+    <form id="profileForm">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname">
+
+      <label for="email">Email</label>
+      <input type="email" id="email">
+
+      <label for="password">Password</label>
+      <input type="password" id="password">
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password">
+
+      <div class="password-toggle">
+        <button type="button" onclick="togglePassword()">Show Password</button>
+      </div>
+
+      <button class="update-button" type="button">Update Profile</button>
+    </form>
+  </div>
+
+  <div class="progress-section">
+    <div class="circular-progress" id="progressCircle">
+      <span id="progressText">0%</span>
+    </div>
+    <ul class="checklist">
+      <li id="check-name">Full name entered</li>
+      <li id="check-email">Email is valid</li>
+      <li id="check-password-length">Password is at least 8 characters</li>
+      <li id="check-password-match">Passwords match</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const fullname = document.getElementById('fullname');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirm-password');
+
+  const checks = {
+    name: document.getElementById('check-name'),
+    email: document.getElementById('check-email'),
+    passwordLength: document.getElementById('check-password-length'),
+    passwordMatch: document.getElementById('check-password-match'),
+  };
+
+  const progressText = document.getElementById('progressText');
+  const progressCircle = document.getElementById('progressCircle');
+
+  function validateForm() {
+    let completed = 0;
+
+    // Full Name Check
+    if (fullname.value.trim() !== '') {
+      checks.name.classList.add('met');
+      completed++;
+    } else {
+      checks.name.classList.remove('met');
+    }
+
+    // Email Check
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailPattern.test(email.value)) {
+      checks.email.classList.add('met');
+      completed++;
+    } else {
+      checks.email.classList.remove('met');
+    }
+
+    // Password Length
+    if (password.value.length >= 8) {
+      checks.passwordLength.classList.add('met');
+      completed++;
+    } else {
+      checks.passwordLength.classList.remove('met');
+    }
+
+    // Password Match
+    if (password.value === confirmPassword.value && password.value.length > 0) {
+      checks.passwordMatch.classList.add('met');
+      completed++;
+    } else {
+      checks.passwordMatch.classList.remove('met');
+    }
+
+    // Update Progress
+    const percent = (completed / 4) * 100;
+    progressText.textContent = `${percent}%`;
+    progressCircle.style.background = `conic-gradient(#28a745 0% ${percent}%, #e6e6e6 ${percent}% 100%)`;
+  }
+
+  function togglePassword() {
+    const type = password.type === 'password' ? 'text' : 'password';
+    password.type = confirmPassword.type = type;
+  }
+
+  fullname.addEventListener('input', validateForm);
+  email.addEventListener('input', validateForm);
+  password.addEventListener('input', validateForm);
+  confirmPassword.addEventListener('input', validateForm);
+</script>
+
+</body>
+</html>
